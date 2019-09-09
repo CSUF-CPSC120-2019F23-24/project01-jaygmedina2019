@@ -1,26 +1,55 @@
 // Name:Juan Medina
 // This program calculates and displays business expenses.
+
 #include <iostream>
 #include <string>
 #include <iomanip>
+
 int main()
 {
-  //creating variable to hold information from the user
+  //Variables to hold information from user
+
   std::string location;
-  double days;
-  double hotel_expenses;
-  double meal_expenses;
-  //Message that welcomes the user to the Business Trip Tracker
-  std::cout << "Welcome to the Business Trip Tracker!\n ";
-  //Blank line showed in example
+  double days, hotel_expenses, meal_expenses, total_expenses;
+
+  //Incoming Welcome Message
+  std::cout << "Welcome to the business Trip Tracker!\n" ;
+
+  //blank line showed in example
   std::cout <<std::endl;
-  //Message asking user to enter trip Location
-  std::cout << "What is the businees trip location? ";
-  //User Response being recorded
+
+  //Ask user for the location
+  std::cout << "what is the business trip location? ";
   std::cin >> location;
-  //Message asking for the amount of days that the trip will last
-  std::cout <<"How many days will the trip take? ";
-  //User response being recorded for amount of days
+
+  //Ask the user for the days the trip took
+  std::cout << "How many days will the trip take? ";
   std::cin >> days;
-  //git
+
+  // Ask the user for the hotel expenses
+  std::cout << "What is the total hotel expense? ";
+  std::cin >> hotel_expenses;
+
+  //Ask the user for the meal expenses
+  std::cout <<"what is the meal expense?";
+  std::cin >> meal_expenses;
+
+  std::cout<<std::endl;
+  //Gather the total expenses
+  total_expenses = hotel_expenses + meal_expenses ;
+
+  //print out the header with the data from the user
+  std::cout <<std::setw(12) <<"Location"
+    << std::setw(8) << "Days"
+    << std::setw(9) << "Hotel"
+    << std::setw(8) << "Meal"
+    << std::setw(9) << "Total" << std::endl;
+
+  std::cout <<std::setw(12) << location
+    <<std::setw(8) << days
+    <<std::setw(9) << hotel_expenses
+    <<std::setw(8) << meal_expenses
+    <<std::setw(9) << total_expenses << std::endl;
+
+  return 0;
 }
